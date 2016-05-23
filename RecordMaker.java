@@ -15,9 +15,14 @@ public class RecordMaker {
 	
 	public static String[] generateID(int num, Random rand, String[] IDs) {
 		int  n = 0;
+		String id = "";
 		for(int i=0; i<num; i++) {
 			n = rand.nextInt(99999);
-			IDs[i] = String.format("%5s", Integer.toString(n)).replace(' ', '0');
+			id = String.format("%5s", Integer.toString(n)).replace(' ', '0');
+			while(Arrays.asList(IDs).contains(id)) {
+				id = String.format("%5s", Integer.toString(n)).replace(' ', '0');
+			}
+			IDs[i] = id;
 		}
 		return IDs;
 	}
