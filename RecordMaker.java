@@ -20,6 +20,7 @@ public class RecordMaker {
 			n = rand.nextInt(99999);
 			id = String.format("%5s", Integer.toString(n)).replace(' ', '0');
 			while(Arrays.asList(IDs).contains(id)) {
+				n = rand.nextInt(99999);
 				id = String.format("%5s", Integer.toString(n)).replace(' ', '0');
 			}
 			IDs[i] = id;
